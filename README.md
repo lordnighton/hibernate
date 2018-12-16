@@ -12,9 +12,10 @@ Hibernate probes / Gradle / Spring Boot
 - Grant all privileges to hibernate DB -- GRANT ALL PRIVILEGES ON * . * TO 'user'@'localhost';
 - Show all users -- SELECT User FROM mysql.user;
 - Now I can jump into mysql console with user 
-- Create new table -- CREATE TABLE hibernate.messages (id INT AUTO_INCREMENT PRIMARY KEY, message VARCHAR(100));
+- Create new table -- CREATE TABLE hibernate.message (id INT AUTO_INCREMENT PRIMARY KEY, message VARCHAR(100));
 - Jump into a context of particular DB -- use hibernate;
 - Clear console -- Edit -> Clear Screen
 - Insert new record to DB -- INSERT INTO messages () VALUES('Hello world!');
-- Drop all messages from DB -- truncate table messages;
+- Drop all messages from DB -- truncate table message;
 - Cool tool to access DB -- SQLetron -- https://github.com/sqlectron -- https://sqlectron.github.io/
+- Drop a particular table -- DROP TABLE message;
