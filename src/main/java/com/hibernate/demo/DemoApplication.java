@@ -12,6 +12,7 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import javax.annotation.Resource;
+import java.util.Collection;
 
 @SpringBootApplication
 @EnableJpaRepositories("com.hibernate")
@@ -36,6 +37,10 @@ public class DemoApplication implements CommandLineRunner {
 		Iterable<Message> messages = messageRepository.findAll();
 		LOGGER.info(String.format("ALL MESSAGES (%d) -> ", messageRepository.count()));
 		messages.forEach(System.out::println);
+
+		Collection<Message> messagesWithLetter = messageRepository.fetchMessagesThatContainCapitalLetter();
+		LOGGER.info(String.format("Messages that contain letter 'C' (%d) -> ", messagesWithLetter.size()));
+		messagesWithLetter.forEach(System.out::println);
 	}
 
 }
